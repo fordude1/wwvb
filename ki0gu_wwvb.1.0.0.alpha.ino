@@ -7,7 +7,8 @@
  *   Arduino board: UNO
  *   LCD: LCD keypad shield integrated
  *   RTC: DS1307
- *   WWVB Receiver: Universal Soldier WWVB Receiver Module - https://universal-solder.com/product/60khz-wwvb-atomic-radio-clock-receiver-replaces-c-max-cmmr-6p-60/
+ *   WWVB Receiver: Universal Soldier WWVB Receiver Module 
+ *   https://universal-solder.com/product/60khz-wwvb-atomic-radio-clock-receiver-replaces-c-max-cmmr-6p-60/
  *   
  *   When the board is first powered on, it tries to aquire a signal from WWVB.
  *   If this signal is weak or has errors, it reads the internal RTC and displays that to the LCD.
@@ -179,16 +180,6 @@ void setup () {
 
 void loop () {
 
-/* Start displaying time
- * from RTC Below
- */
-//lcd.clear();
-//lcd.setCursor(0, 0);
-//lcd.print("KI0GU WWVB Clock");
-//lcd.setCursor(0, 1);
-//lcd.print("Version 001");
-//displayTime();  // display the real-time clock data 
-    
 /* Start WWVB Testing and 
  * decoding below this line
  */
@@ -354,11 +345,5 @@ void parseDate() {
      Note for day - Sunday is 1, Monday is 2 etc
   */
  //setDS1307time(0,15,21,03,03,04,18); // Still have to figure out the logic here
- //Serial.print("string to set RTC: ");
- //Serial.print("0,");
- //Serial.print(minutes);
- //Serial.print(hours);
- //Serial.print(day);
- //Serial.print(   
   
 }
