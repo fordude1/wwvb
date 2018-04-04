@@ -1,6 +1,6 @@
 /*  KI0GU 4/3/2018
  *   
- *   WWVB Testing w/RTC
+ *   WWVB Testing w/RTC v1.0.0.alpha
  *   The First working version
  *   A lot of code clean-up needed here
  *   
