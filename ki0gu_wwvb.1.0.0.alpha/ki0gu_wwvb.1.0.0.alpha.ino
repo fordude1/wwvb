@@ -17,7 +17,6 @@
  *   
  *   Some things to be done:
  *   
- *   1. Add DayOfWeek to project to allow saving date/time to RTC
  *   1. Allow manual setting of time/date with buttons on LCD shield
  *   2. Turn on/off receiver and just read time from RTC
  *   3. Show signal strength on LCD
@@ -57,6 +56,25 @@ byte bcdToDec(byte val)
 {
   return ( (val / 16 * 10) + (val % 16) );
 }
+
+// Day of Year to month translation (thanks to Capt.Tagon)
+// End of Month - to calculate Month and Day from Day of Year 
+int eomYear[14][2] = {
+  {0,0},      // Begin
+  {31,31},    // Jan
+  {59,60},    // Feb
+  {90,91},    // Mar
+  {120,121},  // Apr
+  {151,152},  // May
+  {181,182},  // Jun
+  {212,213},  // Jul
+  {243,244},  // Aug
+  {273,274},  // Sep
+  {304,305},  // Oct
+  {334,335},  // Nov
+  {365,366},  // Dec
+  {366,367}   // overflow
+};
 
 // Set the RTC time
 void setDS1307time(byte second, byte minute, byte hour, byte dayOfWeek, byte dayOfMonth, byte month, byte year)
@@ -356,5 +374,10 @@ void parseDate() {
      Note for day - Sunday is 1, Monday is 2 etc
   */
  //setDS1307time(0,15,21,03,03,04,18); // Still have to figure out the logic here
-  
+  // Translate wwvb day of year into a month and a day of month
+  // This routine is courtesy of Capt.Tagon
+  //int doy = ((byte) wwvbFrame->DayHun * 100) +
+  //           ((byte) wwvbFrame->DayTen * 10) +
+  //           ((byte) wwvbFrame->DayOne);
+             
 }
