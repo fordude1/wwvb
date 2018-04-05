@@ -17,6 +17,7 @@
  *   
  *   Some things to be done:
  *   
+ *   1. Add DayOfWeek to project to allow saving date/time to RTC
  *   1. Allow manual setting of time/date with buttons on LCD shield
  *   2. Turn on/off receiver and just read time from RTC
  *   3. Show signal strength on LCD
